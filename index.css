@@ -1,0 +1,19 @@
+#wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.grid-cell {
+    display: flex;
+    flex: 1 0 33%;
+    border: 1px solid black;
+    min-height: 33.33vh;
+    min-width: 33.33vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-cell:hover {
+    background: pink;
+}
