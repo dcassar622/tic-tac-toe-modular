@@ -16,13 +16,16 @@ function play() {
 function playerRound() {
    
     document.addEventListener('click', (event) => {
+        
         console.log('playing player round');
+        console.log(event);
         if (event.target.className == 'grid-cell') {
             event.target.textContent = 'X';
-
             storeInArray(event.target.id, 'X');
             checkForWin();
             roundCount++;
+            event.stopPropagation();
+            event.preventDefault();
         }
     })
 }
@@ -53,15 +56,11 @@ function getAvailableCells(cells) {
         }
     })
 
-    console.log(availableCells);
-
     return availableCells;
 }
 
 function getRandomNumber(emptyCells) {
     let randomNum = Math.floor(Math.random() * emptyCells.length);
-
-    console.log(emptyCells[randomNum].position)
     return emptyCells[randomNum].position;
 }
 
@@ -93,7 +92,6 @@ function checkForWin() {
 
 function switchTurn() {
     computerTurn = !computerTurn;
-    console.log(computerTurn)
 }
 
 
