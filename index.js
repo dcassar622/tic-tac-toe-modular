@@ -5,7 +5,11 @@ let cellsArray = Array(9).fill('');
 let roundCount = 0;
 let computerTurn = false;
 
-play();
+window.addEventListener('DOMContentLoaded', () => {
+    play();
+})
+
+//play();
 
 function play() {
 
